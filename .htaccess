@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Prevent direct access to non-public files and directories
+    RewriteRule ^(\.env|composer\.(json|lock)|package\.json|README\.md) - [F,L]
+    RewriteRule ^(app|bootstrap|config|database|lang|routes|scripts|storage|tests|vendor)/ - [F,L]
+
+    # Rewrite all public traffic to public directory
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

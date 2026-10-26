@@ -1,0 +1,27 @@
+# Secrets & Environment
+.env
+.env.backup
+.env.production
+*.pem
+*.key
+*.cert
+
+# Composer & Dependencies
+/vendor/
+
+# Storage & Uploads
+/storage/backups/*.sql
+/storage/private/*
+!/storage/private/.gitkeep
+/storage/logs/*.log
+/storage/logs/*.json
+/storage/cache/*
+/storage/sessions/*
+
+# IDE & OS Files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
